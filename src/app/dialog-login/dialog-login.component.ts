@@ -59,6 +59,7 @@ export class DialogLoginComponent implements OnInit {
                     if(this.loginForm.value.courriel==='LeMonarch' && this.loginForm.value.mot_passe === '54321'){
                         sessionStorage.setItem("connecte","admin");
                         conn = true;
+
                         
                     } else {
                         sessionStorage.setItem("connecte","true");
@@ -81,8 +82,14 @@ export class DialogLoginComponent implements OnInit {
                     this.onNoClick();
                     
                 } else if (sessionStorage.getItem("connecte") === "admin") {
+                    //changer l'etat de la connexion dans le service
+                    this.authServ.setConnexion(!this.estConnecte);
+                    this.loginForm.reset();
+                    sessionStorage.setItem("id_usager", user.id);
+                    this.authServ.setTitre('Admin');
+                    this.route.navigateByUrl("/admin");
                     this.onNoClick();
-                    this.openAdmin();
+                    // this.openAdmin();
                 } else {
                     alert("Utilisateur non trouvé")
                 }
@@ -92,13 +99,13 @@ export class DialogLoginComponent implements OnInit {
         }
     }
 
-    openAdmin(): void {
-        this.dialog.open(DialogAdminComponent, {
-            width: '100%',
-            maxWidth: '370px',
-            maxHeight: '540px'
-        }).afterClosed().subscribe(res=>{});
-    }
+    // openAdmin(): void {
+    //     this.dialog.open(DialogAdminComponent, {
+    //         width: '100%',
+    //         maxWidth: '370px',
+    //         maxHeight: '540px'
+    //     }).afterClosed().subscribe(res=>{});
+    // }
 
     connect():boolean{
         return this.authServ.getConnexion();

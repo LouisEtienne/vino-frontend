@@ -49,7 +49,24 @@
                     <a class="liste__btn-saq" href="{{bouteille.url_saq}}" mat-raised-button color="accent">Voir SAQ</a>
                 </td>
             </ng-container>
-              
+            <!--Boutons d'action-->
+            <ng-container matColumnDef="action">
+                <th class="centre" mat-header-cell *matHeaderCellDef>Action</th>
+                <td class="centre buttons" mat-cell *matCellDef="let bouteille"> 
+                    <button class="liste__btn"  (click)="ajouterQuantiteBouteilleCellier(bouteille)" mat-mini-fab aria-label="Example icon button with a home icon">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                    <button class="liste__btn"  (click)="boireQuantiteBouteilleCellier(bouteille)" mat-mini-fab aria-label="Example icon button with a home icon">
+                    <mat-icon>remove</mat-icon>
+                    </button>
+                    <button class="liste__btn"  (click)="editDialog(bouteille)" mat-mini-fab aria-label="Example icon button with a home icon">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="liste__btn" (click)="deleteDialog(bouteille)" mat-mini-fab aria-label="Example icon button with a home icon">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             <!--Ligne affichée lorsqu'il n'y a pas de données correspondantes-->

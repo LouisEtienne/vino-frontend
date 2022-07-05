@@ -37,6 +37,11 @@ export class ApibieroService {
         return this.http.get<IUser>(this.url+'usager/login');
     }
 
+    /** GET requête pour se connecter*/
+    getUsagers(): Observable<IListeUsager>{
+        return this.http.get<IUsager>(this.url+'usager/login');
+    }
+
     /** GET requête pour afficher les bouteilles d'usager */
     getAllBouteillesUsager(id_usager: any): Observable<IListeProduit>{
         return this.http.get<IListeProduit>(this.url+'usager/bouteilles/'+id_usager);
@@ -107,6 +112,10 @@ export class ApibieroService {
     /** ---- Vsevolod ---- DELETE requête pour supprimer la bouteille dans le cellier */
     effacerBouteille(id_bouteille:string, id_cellier:string, id_achats:string):Observable<any>{
         return this.http.delete<IProduit>(this.url+'cellier/cellier/'+id_cellier+'/'+id_bouteille+'/'+id_achats+'/suppression');
+    }
+
+    effacerBouteilleAdmin(id_bouteille:string):Observable<any>{
+        return this.http.delete<IProduit>(this.url+'admin/bouteille/'+id_bouteille+'/suppression');
     }
 
     /** ---- Bita ---- DELETE requête pour supprimer la bouteille dans le cellier */

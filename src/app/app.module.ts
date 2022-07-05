@@ -27,11 +27,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CellierComponent } from './cellier/cellier.component';
 import { ProfilComponent } from './profil/profil.component';
+import { AdminComponent } from './admin/admin.component';
 import { DialogModifCellierComponent } from './dialog-modif-cellier/dialog-modif-cellier.component';
+// import { DialogModifBouteilleAdminComponent } from './dialog-modif-bouteille-admin/dialog-modif-bouteille-admin.component';
+// import { DialogDeleteBouteilleAdminComponent } from './dialog-delete-bouteille-admin/dialog-delete-bouteille-admin.component';
 import { DialogModifMotPasseComponent } from './dialog-modif-mot-passe/dialog-modif-mot-passe.component';
 import { DialogAjoutCellierComponent } from './dialog-ajout-cellier/dialog-ajout-cellier.component';
 import { DialogModifUsagerComponent } from './dialog-modif-usager/dialog-modif-usager.component';
 import { DialogSupprimCellierComponent } from './dialog-supprim-cellier/dialog-supprim-cellier.component';
+import { DialogSupprimBouteilleAdminComponent } from './dialog-supprim-bouteille-admin/dialog-supprim-bouteille-admin.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { DialogAdminComponent } from './dialog-admin/dialog-admin.component';
@@ -55,7 +59,9 @@ import { MatNativeDateModule } from '@angular/material/core';
         DialogModifComponent,
         CellierComponent,
         ProfilComponent,
+        AdminComponent,
         DialogModifCellierComponent,
+        DialogSupprimBouteilleAdminComponent,
         DialogModifMotPasseComponent,
         DialogAjoutCellierComponent,
         DialogModifUsagerComponent,

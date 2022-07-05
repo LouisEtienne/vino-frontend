@@ -27,7 +27,7 @@ export class CellierComponent implements OnInit {
     bouteille !: IProduit;
     cellierData!: string;
     id!: string;
-    cellierNom: string;
+    cellierNom!: string;
     
 
     estEditable:boolean= false;
